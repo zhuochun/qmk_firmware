@@ -10,43 +10,43 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * | Grv    |   1  |   2  |   3  |   4  |   5  | Del  |           |   =  |   6  |   7  |   8  |   9  |   0  |   -    |
+ * | Grv    |   1  |   2  |   3  |   4  |   5  | Del  |           | Esc  |   6  |   7  |   8  |   9  |   0  |   -    |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * | Tab    |   Q  |   W  |   E  |   R  |   T  |  L1  |           |  L2  |   Y  |   U  |   I  |   O  |   P  |   \    |
+ * | Tab    |   Q  |   W  |   E  |   R  |   T  |  L1  |           |  L1  |   Y  |   U  |   I  |   O  |   P  |   \    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * | Esc/Gui|   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  | '"/Ctrl|
  * |--------+------+------+------+------+------| Hyper|           | Meh  |------+------+------+------+------+--------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   | ~L1  |=/Ctrl| LAlt | Up/L2|Down/Gui|                                    |Left/L2| Right|   [  |   ]  | ~L1 |
- *   `------------------------------------'                                    `----------------------------------'
- *                                       ,--------------.       ,----------------.
- *                                       |Alt/Esc| LGui |       |Tab/Gui|Ctrl/Esc|
- *                                ,------|-------|------|       |-------+--------+-------.
- *                                |      |       | PgUp |       | Home  |        |       |
- *                                |Backsp| Space |------|       |-------| Enter  | Space |
- *                                | ace  |       | PgDn |       | End   |        |       |
- *                                `---------------------'       `------------------------'
+ *    | ~L1 |Up/Ctrl|Down/Alt|Left/L2|Right/Gui|                                | =/L2 |   -  |   [  |   ]  | ~L1 |
+ *    `----------------------------------------'                                `---------------------------------'
+ *                                       ,--------------.       ,---------------.
+ *                                       |Alt/Esc| LGui |       | Up   |Down/Gui|
+ *                               ,-------|-------|------|       |------+--------+-------.
+ *                               |       |       | PgUp |       | Home |        |       |
+ *                               |Backsps| Space |------|       |------| Enter  | Space |
+ *                               |       |       | PgDn |       | End  |        |       |
+ *                               `----------------------'       `------------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
 // Otherwise, it needs KC_*
 [BASE] = KEYMAP(  // layer 0 : default
         // left hand
-        KC_GRV,        KC_1,    KC_2,    KC_3,            KC_4,           KC_5,          KC_DELT,
-        KC_TAB,        KC_Q,    KC_W,    KC_E,            KC_R,           KC_T,          TG(SYMB),
-        GUI_T(KC_ESC), KC_A,    KC_S,    KC_D,            KC_F,           KC_G,
-        KC_LSFT,       KC_Z,    KC_X,    KC_C,            KC_V,           KC_B,          ALL_T(KC_NO),
-        KC_FN1,        KC_EQL,  KC_LALT, LT(MDIA, KC_UP), GUI_T(KC_DOWN),
-                                                                          ALT_T(KC_ESC), KC_LGUI,
-                                                                                         KC_PGUP,
-                                                                  KC_BSPC,KC_SPC,        KC_PGDN,
+        KC_GRV,        KC_1, KC_2, KC_3, KC_4, KC_5, KC_DELT,
+        KC_TAB,        KC_Q, KC_W, KC_E, KC_R, KC_T, TG(SYMB),
+        GUI_T(KC_ESC), KC_A, KC_S, KC_D, KC_F, KC_G,
+        KC_LSFT,       KC_Z, KC_X, KC_C, KC_V, KC_B, ALL_T(KC_NO),
+        KC_FN1,CTL_T(KC_UP), ALT_T(KC_DOWN),LT(MDIA, KC_LEFT),GUI_T(KC_RGHT),
+                                                     ALT_T(KC_ESC), KC_LGUI,
+                                                                    KC_PGUP,
+                                                     KC_BSPC,KC_SPC,KC_PGDN,
         // right hand
-        KC_EQL,       KC_6, KC_7,              KC_8,    KC_9,    KC_0,    KC_MINS,
-        TG(SYMB),     KC_Y, KC_U,              KC_I,    KC_O,    KC_P,    KC_BSLS,
-                      KC_H, KC_J,              KC_K,    KC_L,    KC_SCLN, CTL_T(KC_QUOT),
-        MEH_T(KC_NO), KC_N, KC_M,              KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-                            LT(MDIA, KC_LEFT), KC_RGHT, KC_LBRC, KC_RBRC, KC_FN1,
-        GUI_T(KC_TAB),CTL_T(KC_ESC),
+        KC_ESC,       KC_6, KC_7,  KC_8,   KC_9,   KC_0,    KC_MINS,
+        TG(SYMB),     KC_Y, KC_U,  KC_I,   KC_O,   KC_P,    KC_BSLS,
+                      KC_H, KC_J,  KC_K,   KC_L,   KC_SCLN, CTL_T(KC_QUOT),
+        MEH_T(KC_NO), KC_N, KC_M,  KC_COMM,KC_DOT, KC_SLSH, KC_RSFT,
+                            KC_EQL,KC_MINS,KC_LBRC,KC_RBRC, KC_FN1,
+        KC_UP,GUI_T(KC_DOWN),
         KC_HOME,
         KC_END,KC_ENT,KC_SPC
 ),
