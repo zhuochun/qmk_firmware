@@ -27,7 +27,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------| ~L1  |           |      |------+------+------+------+------+--------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *    |Hyper| LCtl | LAlt | Down |  Up  |                                       |   =  | Left | Right|   '  | Meh |
+ *    |Hyper| LCtl | LAlt |  Up  | Down |                                       |   =  | Left | Right|   '  | Meh |
  *    `---------------------------------'                                       `---------------------------------'
  *                                       ,--------------.       ,---------------.
  *                                       | Space | Enter|       |  Up  |  Down  |
@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,       KC_Q,    KC_W,    KC_E,    KC_R,  KC_T,   TG(SYMB),
         GUI_T(KC_ESC),KC_A,    KC_S,    KC_D,    KC_F,  KC_G,
         KC_LSFT,      KC_Z,    KC_X,    KC_C,    KC_V,  KC_B,   OSL(SYMB),
-        ALL_T(KC_NO), KC_LCTL, KC_LALT, KC_DOWN, KC_UP,
+        ALL_T(KC_NO), KC_LCTL, KC_LALT, KC_UP,KC_DOWN,
                                                         KC_SPC, KC_ENT,
                                                                 KC_NO,
                                                KC_BSPC,KC_LGUI, KC_LBRC,
@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TG(CALC), KC_Y, KC_U,  KC_I,   KC_O,   KC_P,    KC_BSLS,
                   KC_H, KC_J,  KC_K,   KC_L,   KC_SCLN, CTL_T(KC_ENT),
         KC_NO,    KC_N, KC_M,  KC_COMM,KC_DOT, KC_SLSH, KC_RSFT,
-                        KC_EQL,KC_LBRC,KC_RBRC,KC_QUOT, MEH_T(KC_NO),
+                        KC_EQL,KC_LEFT,KC_RIGHT,KC_QUOT, MEH_T(KC_NO),
         KC_UP,  KC_DOWN,
         KC_NO,
         KC_RBRC,LT(SYMB,KC_MINS),KC_SPC
